@@ -1,0 +1,34 @@
+.blossom {
+  position: fixed;
+  top: -50px;
+  width: 20px;
+  height: 20px;
+  background-image: url('/assets/lixi.png'); /* Hình hoa mai */
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(720deg);  /* Xoay nhiều hơn khi rơi */
+      opacity: 0;
+  }
+}
+
+  
+  .blossom:nth-child(even) {
+    animation-duration: 12s; /* Tạo sự ngẫu nhiên cho thời gian rơi */
+    left: 20%;
+  }
+  
+  .blossom:nth-child(odd) {
+    animation-duration: 8s; /* Tạo sự ngẫu nhiên cho thời gian rơi */
+    left: 80%;
+  }
+  

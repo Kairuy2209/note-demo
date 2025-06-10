@@ -1,0 +1,389 @@
+.task-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #4dc7b7;
+  border-radius: 8px;
+  background: linear-gradient(to right, #adeaf3, #edc4e7); /* Gradient từ sáng sang tối */
+  box-shadow: 0 2px 10px rgba(90, 143, 164, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển tiếp cho transform và box-shadow */
+}
+
+/* Cập nhật hiệu ứng cho tiêu đề Task List */
+.task-title {
+  text-align: center;
+  margin-bottom: 40px; /* Tăng khoảng cách dưới */
+  font-size: 60px; /* Kích thước chữ lớn hơn để tạo ấn tượng */
+  font-weight: 900; /* Độ đậm chữ tối đa */
+  text-transform: uppercase; /* Chữ in hoa */
+  letter-spacing: 8px; /* Tăng khoảng cách giữa các chữ để nhìn sang trọng hơn */
+  padding: 25px 40px; /* Padding lớn hơn để tạo cảm giác thoải mái */
+  background: linear-gradient(135deg, #48239d, #949190, #3498db); /* Gradient màu sắc tươi sáng */
+  background-clip: text; /* Gradient cho chữ */
+  color: transparent; /* Chữ trong suốt để hiện gradient */
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2); /* Đổ bóng sâu và nổi bật */
+  border-radius: 15px; /* Bo góc mượt mà hơn */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn phần tràn */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt cho chuyển động và bóng */
+  backdrop-filter: blur(10px); /* Làm mờ nền mạnh hơn */
+  cursor: pointer; /* Đổi con trỏ thành tay chỉ */
+}
+
+.task-title::before {
+  content: '';
+  position: absolute;
+  top: -20px;  /* Điều chỉnh vị trí dọc */
+  left: 0;     /* Đưa ảnh sát góc trái */
+  width: 180px;  
+  height: 170px;
+  background: url('/assets/banh.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.8;  
+  pointer-events: none;  
+}
+
+
+.task-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;  /* Điều chỉnh vị trí */
+  right: -30px; /* Điều chỉnh vị trí */
+  width: 180px;  
+  height: 170px;;
+  background: url('/assets/maiphai.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.task-title::before {
+  
+  top: -15px; /* Căn trên */
+  left: 0;
+  border-radius: 15px 15px 0 0; /* Bo góc trên */
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.task-title::after {
+  margin: 10px auto; /* Căn giữa */
+  border-radius: 5px; /* Bo góc */
+}
+
+.add-task-container {
+  display: flex;
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  margin-bottom: 20px; /* Khoảng cách giữa phần thêm nhiệm vụ và tiêu đề */
+}
+
+.add-task-icon {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 10px; /* Khoảng cách giữa icon và ô tìm kiếm */
+  cursor: pointer;
+  font-size: 24px; /* Kích thước icon */
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 20px; /* Increase padding for a more prominent look */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Round the edges for a pill-shaped design */
+  margin-left: 10px;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9); /* Vibrant blue gradient */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 2px 6px rgba(255, 255, 255, 0.5); /* Soft shadow with inner highlight */
+  color: #fff; /* White text for contrast */
+  font-size: 16px; /* Larger font size for better readability */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions for interaction */
+  position: relative;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Subtle placeholder text */
+}
+
+.search-input:hover {
+  background: linear-gradient(135deg, #74ebd5, #3c90a6); /* Lighten the gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 3px 8px rgba(255, 255, 255, 0.6); /* Stronger shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.search-input:focus {
+  background: linear-gradient(135deg, #5dade2, #2874a6); /* Change gradient on focus */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), inset 0 4px 10px rgba(255, 255, 255, 0.7); /* Even stronger shadow for focus */
+  transform: scale(1.07); /* Slightly larger on focus */
+  outline: none; /* Remove outline */
+}
+
+/* Add glow effect for enhanced interaction */
+.search-input:focus::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  bottom: -5px;
+  border-radius: 35px; /* Larger radius for glowing effect */
+  box-shadow: 0 0 15px rgba(33, 150, 243, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing shadow */
+  z-index: -1; /* Keep behind the input field */
+}
+
+
+.calendar-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px; /* Khoảng cách giữa ô tìm kiếm và icon lịch */
+}
+
+.calendar {
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  margin-bottom: 20px;
+  padding: 12px 18px; /* Enhanced padding for bold appearance */
+  border: none;
+  border-radius: 30px; /* Circular edges for a unique shape */
+  width: 170px;
+  background: linear-gradient(135deg, #d5ff9acd, #fad0c4); /* Vibrant pink and peach gradient */
+  box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.5), 0 8px 20px rgba(0, 0, 0, 0.2); /* Inner and outer shadows */
+  font-size: 18px; /* Larger text for a bold look */
+  color: #2c3e50; /* Darker text for contrast */
+  letter-spacing: 1px; /* Slight letter spacing for modern feel */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+  position: relative;
+}
+
+.filter-select:hover, .filter-select:focus {
+  background: linear-gradient(135deg, #ddff61, #ffb199); /* A more vibrant gradient on hover */
+  box-shadow: inset 0 6px 8px rgba(255, 255, 255, 0.3), 0 10px 25px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.filter-select:focus {
+  outline: none;
+}
+
+/* Experimental dropdown arrow */
+.filter-select::after {
+  content: '⮟'; /* Using a Unicode character for a modern arrow */
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px; /* Larger arrow for emphasis */
+  color: #ff6f61; /* Arrow color matching the gradient */
+  pointer-events: none;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.filter-select:hover::after {
+  color: #d35400; /* Darker color on hover for the arrow */
+}
+
+
+.task-list {
+  width: calc(23%-14px);
+  justify-content:left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.task-list p {
+  height: 50px;
+  font-size: 18px;
+}
+
+.task-card {
+  width: 240px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn */
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.task-card.completed {
+  background-color: #d4edda; /* Màu xanh lá cho Completed */
+}
+
+.task-card.pending {
+  background-color: #f8d7da; /* Màu đỏ nhạt cho Pending */
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Bóng đổ khi hover */
+
+}
+
+
+.task-status {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.action-buttons button,
+.action-buttons a {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 1.5em;
+}
+
+.action-buttons button:hover,
+.action-buttons a:hover {
+  color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 9;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.completed-status {
+  color: #28a745;
+}
+
+.pending-status {
+  color: #dc3545;
+}
+
+/* Cải thiện hiển thị của các ô có nhiệm vụ */
+.calendar .has-task {
+  background-color: rgba(255, 0, 0, 0.1); /* Nền đỏ nhạt cho ngày có nhiệm vụ */
+  border-radius: 50%; /* Hình tròn cho các ô có nhiệm vụ */
+  border: 1px solid #ff4c4c; /* Viền màu đỏ nổi bật hơn */
+  text-decoration: none; /* Không gạch chân */
+  position: relative; /* Để thêm hiệu ứng nổi */
+}
+
+/* Hiệu ứng khi hover trên các ô có nhiệm vụ */
+.calendar .has-task:hover {
+  background-color: rgba(255, 0, 0, 0.2); /* Đậm hơn khi hover */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Thêm bóng đổ cho hiệu ứng nổi */
+}
+
+/* Cập nhật cho ô ngày được chọn có nhiệm vụ */
+.calendar .react-calendar__tile--active.has-task {
+  background-color: #e63946; /* Nền màu đỏ tối hơn */
+  color: white;
+  border-radius: 50%; /* Hình tròn cho ô ngày được chọn */
+  transform: scale(1.1); /* Phóng to ô khi chọn */
+  transition: transform 0.2s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+/* Cải thiện hiệu ứng hover cho ô ngày không có nhiệm vụ */
+.calendar .react-calendar__tile:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Nền sáng hơn khi hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho hiệu ứng nổi */
+  border-radius: 8px; /* Góc bo tròn cho các ô */
+}
+
+/* Cải thiện màu sắc cho ngày cuối tuần */
+.calendar .react-calendar__tile--weekend {
+  background-color: rgba(0, 0, 0, 0.05); /* Nền sáng hơn cho ngày cuối tuần */
+}
+
+/* Cải thiện kiểu dáng của tiêu đề tháng và năm */
+.react-calendar__navigation button {
+  background-color: #2980b9; /* Nền xanh cho nút */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Góc bo tròn */
+  padding: 5px 10px; /* Padding cho nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển tiếp */
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #3498db; /* Nền sáng hơn khi hover */
+}
+/* Lịch sẽ được căn giữa màn hình khi mở */
+.calendar-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Đảm bảo lịch nằm trên các phần tử khác */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Khi lịch được hiển thị */
+.calendar-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hiệu ứng hover khi click vào ngày có nhiệm vụ */
+.calendar .has-task:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+  transform: scale(1.1);
+}
+
+/* Cập nhật kiểu dáng của ô ngày được chọn */
+.calendar .react-calendar__tile--active.has-task {
+  background-color: #e63946;
+  color: white;
+  transform: scale(1.2); /* Phóng to ngày được chọn */
+  transition: transform 0.2s ease;
+}
+/* Tạo lớp cho calendar modal */
+.calendar-modal {
+  position: fixed; /* Đặt vị trí cố định */
+  top: 50%; /* Căn giữa theo chiều dọc */
+  left: 50%; /* Căn giữa theo chiều ngang */
+  transform: translate(-50%, -50%); /* Căn chỉnh chính xác ở giữa màn hình */
+  z-index: 9999; /* Đảm bảo lịch nằm trên các thành phần khác */
+   /* Hiệu ứng chuyển động mượt mà khi hiện modal */
+}
+
+/* Tạo hiệu ứng mờ cho phần còn lại của màn hình khi lịch được mở */
+.overlay {
+  position: fixed; /* Đặt vị trí cố định */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+  z-index: 9998; /* Đặt dưới modal */
+}

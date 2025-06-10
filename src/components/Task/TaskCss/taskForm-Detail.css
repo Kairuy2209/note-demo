@@ -1,0 +1,229 @@
+/* Thiết lập font và màu nền hiện đại */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #c5cae9); /* Gradient background */
+    color: #34495e;
+    line-height: 1.6;
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi khi thay đổi */
+    
+    /* Ảnh nền */
+    background-image: url('/assets/g.png'); /* Đường dẫn ảnh nền */
+    background-size: cover; /* Đảm bảo ảnh phủ toàn bộ màn hình */
+    background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+    background-position: center center; /* Căn giữa ảnh nền */
+    
+    /* Di chuyển ảnh nền cùng nội dung khi vuốt trang */
+    background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn trang */
+}
+
+
+/* Card-style container với Neumorphism */
+.task-form-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 50px;
+  border-radius: 25px;
+  background: #ecf0f3;
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.15), -9px -9px 16px rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  /* Ảnh nền */
+  background-image: url('/assets/1.png'); /* Đường dẫn ảnh nền */
+  background-size: cover; /* Đảm bảo ảnh phủ toàn bộ màn hình */
+  background-repeat: no-repeat; /* Không lặp lại ảnh nền */
+  background-position: center center; /* Căn giữa ảnh nền */
+  
+  /* Di chuyển ảnh nền cùng nội dung khi vuốt trang */
+  background-attachment: fixed; /* Giữ ảnh nền cố định khi cuộn trang */
+}
+
+.task-form-container:hover {
+  box-shadow: 14px 14px 24px rgba(0, 0, 0, 0.2), -14px -14px 24px rgba(255, 255, 255, 0.9);
+  transform: translateY(-50px);
+}
+
+/* Cải thiện tiêu đề với tông màu tươi sáng và hiệu ứng động */
+.form-title {
+  text-align: center;
+  margin-bottom: 40px; /* Tăng khoảng cách dưới */
+  font-size: 60px; /* Kích thước chữ lớn hơn để tạo ấn tượng */
+  font-weight: 900; /* Độ đậm chữ tối đa */
+  text-transform: uppercase; /* Chữ in hoa */
+  letter-spacing: 8px; /* Tăng khoảng cách giữa các chữ để nhìn sang trọng hơn */
+  padding: 25px 40px; /* Padding lớn hơn để tạo cảm giác thoải mái */
+  background: linear-gradient(135deg, #48239d, #949190, #3498db); /* Gradient màu sắc tươi sáng */
+  background-clip: text; /* Gradient cho chữ */
+  color: transparent; /* Chữ trong suốt để hiện gradient */
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(157, 218, 236, 0.2); /* Đổ bóng sâu và nổi bật */
+  border-radius: 15px; /* Bo góc mượt mà hơn */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn phần tràn */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng mượt cho chuyển động và bóng */
+  backdrop-filter: blur(10px); /* Làm mờ nền mạnh hơn */
+  cursor: pointer; /* Đổi con trỏ thành tay chỉ */
+}
+
+.form-title:hover {
+  color: #3498db; /* Đổi màu khi hover */
+  transform: translateY(-3px); /* Nâng tiêu đề lên một chút khi hover */
+}
+
+/* Form với khoảng cách và hiệu ứng động */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Neumorphism Input và Textarea với hiệu ứng focus */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  background: #ecf0f3;
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.1), inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  color: #34495e;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.6), inset 6px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* Cải thiện bố cục cho các nút */
+.form-actions {
+  display: flex;
+  justify-content: space-between; /* Giữ khoảng cách giữa hai nút */
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Button với hiệu ứng động */
+.submit-button,
+.back-button {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease, transform 0.2s ease;
+  color: #fff;
+  flex: 1; /* Đặt độ rộng của các nút bằng nhau */
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15), -5px -5px 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Hiệu ứng hover và active cho các nút */
+.submit-button {
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+}
+
+.back-button {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+.submit-button:hover,
+.back-button:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.submit-button:active,
+.back-button:active {
+  transform: translateY(2px) scale(0.98);
+}
+
+/* Thông báo lỗi */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Loader hiện đại */
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Alert với hiệu ứng hiện đại */
+.alert {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInScale 0.6s forwards;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Bố cục nút trên màn hình nhỏ */
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column; /* Đặt nút theo chiều dọc trên màn hình nhỏ */
+    align-items: center; /* Căn giữa các nút */
+  }
+
+  .submit-button,
+  .back-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.add-task-icon:hover::after {
+  content: '💸'; /* Biểu tượng lì xì */
+  position: absolute;
+  animation: fall 1s ease forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

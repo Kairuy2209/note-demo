@@ -1,0 +1,134 @@
+/* Common styles */
+.modal-content {
+    padding: 25px; /* Thêm khoảng cách xung quanh nội dung modal */
+    border-radius: 12px; /* Các góc tròn mềm mại hơn */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Shadow để tạo chiều sâu */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi mượt mà cho modal */
+}
+/* TaskModal.css */
+.modal-content p {
+    white-space: pre-wrap; /* Điều này sẽ giúp giữ nguyên các ký tự xuống hàng */
+}
+
+
+/* Title styling */
+h2 {
+    font-family: 'Arial', sans-serif; /* Sử dụng font chữ hiện đại */
+    font-size: 1.6rem; /* Kích thước tiêu đề lớn hơn */
+    margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Dark mode styles */
+.dark-mode .modal-content {
+    background: linear-gradient(145deg, #1f1f1f, #2c2c2c); /* Gradient background for depth */
+    color: #fff; /* Màu chữ trong chế độ tối */
+}
+
+.dark-mode .save-button, 
+.dark-mode .dark-mode-toggle {
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient cho nút */
+    color: white; /* Màu chữ cho nút trong chế độ tối */
+}
+
+.dark-mode .close {
+    color: #ffffff; /* Màu chữ cho nút đóng trong chế độ tối */
+}
+
+/* Light mode styles */
+.light-mode .modal-content {
+    background: white; /* Màu nền cho chế độ sáng */
+    color: #333; /* Màu chữ trong chế độ sáng */
+}
+
+.light-mode .save-button, 
+.light-mode .dark-mode-toggle {
+    background: linear-gradient(90deg, #007bff, #0056b3); /* Gradient cho nút */
+    color: white; /* Màu chữ cho nút trong chế độ sáng */
+}
+
+.light-mode .close {
+    color: #333; /* Màu chữ cho nút đóng trong chế độ sáng */
+}
+
+/* Button styles */
+.save-button, 
+.dark-mode-toggle {
+    border: none;
+    padding: 12px 20px; /* Padding cho nút */
+    border-radius: 6px; /* Các góc tròn cho nút */
+    margin: 10px 0; /* Khoảng cách đều giữa các nút */
+    cursor: pointer;
+    font-size: 1rem; /* Kích thước font chữ cho nút */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển màu và di chuyển */
+}
+
+/* Button hover effects */
+.save-button:hover,
+.dark-mode-toggle:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff); /* Gradient đảo ngược khi hover */
+    transform: translateY(-2px); /* Nâng lên nhẹ khi hover */
+}
+
+/* Close button styling */
+.close {
+    font-size: 1.5rem; /* Kích thước cho nút đóng */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu cho nút đóng */
+}
+
+.close:hover {
+    color: #ff4d4d; /* Màu sắc đổi khi hover */
+}
+/* Thêm một lớp cho container của nút */
+.button-container {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các nút */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các nút */
+    margin-top: 20px; /* Khoảng cách phía trên các nút */
+    padding: 10px; /* Thêm padding cho container */
+    border-radius: 8px; /* Các góc tròn mềm mại */
+    background-color: rgba(255, 255, 255, 0.1); /* Nền mờ cho container */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi cho nền */
+}
+
+/* Hiệu ứng hover cho container */
+.button-container:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Tối ưu hóa hiệu ứng hover */
+}
+
+/* Cập nhật margin cho các nút */
+.save-button, 
+.dark-mode-toggle {
+    flex: 1; /* Cho phép các nút chiếm không gian đều nhau */
+    padding: 12px 20px; /* Padding cho nút */
+    margin-right: 10px; /* Khoảng cách bên phải cho nút đầu tiên */
+    border: none; /* Gỡ bỏ border mặc định */
+    border-radius: 6px; /* Các góc tròn cho nút */
+    font-size: 1rem; /* Kích thước font chữ cho nút */
+    cursor: pointer; /* Con trỏ khi hover lên nút */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển màu và di chuyển */
+}
+
+/* Gỡ bỏ margin cho nút thứ hai */
+.dark-mode-toggle {
+    margin-right: 0; /* Gỡ bỏ margin bên phải cho nút thứ hai */
+}
+
+/* Hiệu ứng hover cho nút */
+.save-button:hover,
+.dark-mode-toggle:hover {
+    background: linear-gradient(90deg, #0056b3, #007bff); /* Gradient đảo ngược khi hover */
+    transform: translateY(-2px); /* Nâng lên nhẹ khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng khi hover */
+}
+
+/* Close button styling */
+.close {
+    font-size: 1.5rem; /* Kích thước cho nút đóng */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu cho nút đóng */
+}
+
+.close:hover {
+    color: #ff4d4d; /* Màu sắc đổi khi hover */
+}
